@@ -1,0 +1,30 @@
+h1 {
+    color: #b5a3c4;
+    margin: 4px;
+}
+img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 16px;
+}
+.apps {
+    border: solid;
+    width: fit-content;
+    border-radius: 25px;
+    padding: 30px;
+    position: absolute;
+    top: 50%;
+    left: 50%; 
+    transform: translate(-50%, -50%);
+}
+.topbar {
+    display: flex;
+    justify-content: space-between;
+}
+body {
+    background-image: url(/images/daisy_bunny.jpg);
+    background-size: cover;
+    height:100vh;
+
+}
