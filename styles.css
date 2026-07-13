@@ -28,3 +28,9 @@ body {
     height:100vh;
 
 }
+.closeButton {
+    color: red;
+}
+#window {
+    flex-direction: row;
+}

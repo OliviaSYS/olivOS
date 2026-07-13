@@ -4,16 +4,42 @@
         <link href="styles.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
-        <div class="topbar">
-            <p>olivOS</p>
+        <div class="topbar" id="top">
+            <p style="cursor: pointer" id="welcomeopen">olivOS</p>
             <p id="time">05/24/2026 9:58 PM</p>
         </div>
-        <div class="apps">
+        <div id="desktopApps" style="padding-top: 64px; padding-left: 16px;">
+            <div style="width: fit-content"  onclick="handleIconTap(this)">
+                <img src="./images/daisy_bunny.jpg" style="width: 64px; height: 64px; border-radius: 16px;">
+                <p style="color: #fff;">About Me</p>
+            </div>
+        </div>
+        <div id = "welcome" class="window">
+            <p id="welcomeheader">
+                Handle
+            </p>
+            <p class="closebutton" style="cursor: pointer" id="welcomeclose">Close</p>
             <h1>Welcome to olivOS!</h1>
             <h2>Intro</h2>
             <p>Hello! Discover more about me on this web<abbr title="abbreviaton">OS</abbr> 😃</p>
-            <img src="/images/bwunny profile picture.jpg"/>
+            <div class="selected" style="width: fit-content" >
+                <img src="/images/bwunny profile picture.jpg"/>
+            </div>
             <p>Click on <a href="https://github.com/OliviaSYS">my github</a> to find my other projects! </p>
+        </div>
+        <div id="aboutme" class="window" style="padding-top: 64px; padding-left: 16px; display:none;">
+            <p id="aboutmeheader">
+                Handle
+            </p>
+            <p class="closebutton" style="cursor: pointer" id="aboutmeclose">Close</p>
+            <div class="selected" style="width: fit-content">
+                <img src="./images/daisy_bunny.jpg" style="width: 64px; height: 64px; border-radius: 16px;">
+            </div>
+            <h1>About Me</h1>
+            <p>Hello, this means it is opened!</p>
+        </div>
+        <div id="desktopApps" style="padding-top: 64px; padding-left: 16px;">
+            <p>Achievements</p>
         </div>
     </body>
     <script src="script.js"></script>
