@@ -2,8 +2,8 @@ setInterval(function () {
     document.querySelector("#time").innerHTML = new Date().toLocaleString();
 }, 1000);
 
-var selectedIcon = undefined;
-var biggestIndex = 1;
+let selectedIcon = undefined;
+let biggestIndex = 1;
 
 function closeWindow(element) {
     element.style.display = "none";
@@ -65,9 +65,10 @@ function deselectIcon(element) {
 function handleIconTap(element) {
     if (element.classList.contains("selected")) {
         deselectIcon(element);
-        openWindow(document.querySelector("#aboutme"));
+        const windowId = element.dataset.window;
+        openWindow(document.querySelector("#" +windowId));
     } else {
-        selectedIcon(element);
+        selectIcon(element);
     }
 }
 function addWindowTapHandling(element) {
@@ -79,7 +80,9 @@ function handleWindowTap(element) {
     biggestIndex++;
     element.style.zIndex = biggestIndex;
     topBar.style.zIndex = biggestIndex+1;
-    deselectIcon(selectedIcon);
+    if (selectedIcon) {
+        deselectIcon(selectedIcon);
+    }
 }
 function openWindow(element) {
     element.style.display="flex";
@@ -88,26 +91,23 @@ function openWindow(element) {
     topBar.style.zIndex = biggestIndex+1;
 }
 
-var topBar = document.querySelector("#top");
-
-var welcomeScreen = document.querySelector("#welcome");
-var welcomeScreenClose = document.querySelector("#welcomeclose")
+const topBar = document.querySelector("#top");
 
 initializeWindow("aboutme");
 initializeWindow("welcome");
-var aboutmeScreen = document.querySelector("#aboutme");
-var aboutmeScreenClose = document.querySelector("#aboutmeclose")
-aboutmeScreenClose.addEventListener("click", () => closeWindow(aboutmeScreen));
+// var aboutmeScreen = document.querySelector("#aboutme");
+// var aboutmeScreenClose = document.querySelector("#aboutmeclose")
+// aboutmeScreenClose.addEventListener("click", () => closeWindow(aboutmeScreen));
 
-var welcomeScreen = document.querySelector("#welcome");
-var welcomeScreenClose = document.querySelector("#welcomeclose")
-var welcomeScreenOpen = document.querySelector("#welcomeopen")
-welcomeScreenClose.addEventListener("click", function() {
-    closeWindow(welcomeScreen);
-});
+// var welcomeScreen = document.querySelector("#welcome");
+// var welcomeScreenClose = document.querySelector("#welcomeclose")
+// var welcomeScreenOpen = document.querySelector("#welcomeopen")
+// welcomeScreenClose.addEventListener("click", function() {
+//     closeWindow(welcomeScreen);
+// });
 
-welcomeScreenOpen.addEventListener("click", function() {
-    openWindow(welcomeScreen);
-});
-addWindowTapHandling(welcomeScreen);
-addWindowTapHandling(aboutmeScreen);
+// welcomeScreenOpen.addEventListener("click", function() {
+//     openWindow(welcomeScreen);
+// });
+// addWindowTapHandling(welcomeScreen);
+// addWindowTapHandling(aboutmeScreen);
