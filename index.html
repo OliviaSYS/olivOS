@@ -2,57 +2,75 @@
 <html>
     <head>
         <link href="styles.css" rel="stylesheet" type="text/css"/>
+        <title>olivOS</title>
     </head>
     <body>
         <div class="topbar" id="top">
             <p style="cursor: pointer" id="welcomeopen">olivOS</p>
-            <p id="time">05/24/2026 9:58 PM</p>
-        </div>
-        <div class="desktop-icon" onclick="handleIconTap(this)" data-window="welcome">
-            <img src="./images/daisy_bunny.jpg">
-            <p>Welcome</p>
+            <p id="time"></p>
         </div>
         <div id="desktopApps">
             <div class="desktop-icon" onclick="handleIconTap(this)" data-window="welcome">
-                <img src="./images/daisy_bunny.jpg">
+                <div>
+                    <img src="./images/bwunny profile picture.png">
+                </div>
                 <p>Welcome</p>
             </div>
         
             <div class="desktop-icon" onclick="handleIconTap(this)" data-window="aboutme">
-                <img src="./images/daisy_bunny.jpg">
+                <div>
+                    <img src="./images/daisy_bunny.jpg">
+                </div>
                 <p>About Me</p>
             </div>
         
             <div class="desktop-icon" onclick="handleIconTap(this)" data-window="funfacts">
-                <img src="./images/daisy_bunny.jpg">
+                <div>
+                    <img src="./images/bunpile.jpg">
+                </div>
                 <p>Fun Facts</p>
             </div>
         
         </div>
         <div id="windows">
             <div id="welcome"  class="window" data-window="welcome">
-                <p id="welcomeheader">
-                    Handle
-                </p>
-                <p class="closebutton" style="cursor: pointer" id="welcomeclose">Close</p>
+                <div class = "windowtopbar">
+                    <p class="windowheader" style="cursor: pointer" id="welcomeheader">Handle</p>
+                    <p class="closebutton" style="cursor: pointer" id="welcomeclose">Close</p>
+                </div>
                 <h1>Welcome to olivOS!</h1>
                 <h2>Intro</h2>
                 <p>Hello! Discover more about me on this web<abbr title="abbreviaton">OS</abbr> 😃</p>
-                <div class="selected">
-                    <img src="/images/bwunny profile picture.jpg"/>
+                <div class="windowimage">
+                    <img src="./images/bwunny profile picture.png"/>
                 </div>
                 <p>Click on <a href="https://github.com/OliviaSYS">my github</a> to find my other projects! </p>
             </div>
             <div id="aboutme" class="window" data-window="aboutme">
-                <p id="aboutmeheader">
-                    Handle
-                </p>
-                <p class="closebutton" style="cursor: pointer" id="aboutmeclose">Close</p>
-                <div class="selected">
-                    <img src="./images/daisy_bunny.jpg" style="width: 64px; height: 64px; border-radius: 16px;">
+                <div class = "windowtopbar">
+                    <p class="windowheader" style="cursor: pointer" id="aboutmeheader">Handle</p>
+                    <p class="closebutton" style="cursor: pointer" id="aboutmeclose">Close</p>
                 </div>
-                <h1>About Me</h1>
-                <p>Hello, this means it is opened!</p>
+                <div class="windowimage">
+                    <img src="./images/daisy_bunny.jpg">
+                </div>
+                <h1>Short Introduction About Me</h1>
+                <p>Hi! I'm a Grade 9 Pre-IB student at St. Robert CHS who is passionate about contest math, competitive programming, and software projects!
+                    In addition, I enjoy long-distance running (my PB for a 5K is 23:49), and my hobbies include crocheting, soldering radios, and building Godot games.
+                    Learn more about me in my <a href="oliviasys.github.io/Olivia-s-Website"><em>personal website!</em></a>
+                </p>
+            </div>
+            <div id="funfacts" class="window" data-window="funfacts">
+                <div class = "windowtopbar">
+                    <p class="windowheader" style="cursor: pointer" id="funfactsheader">Handle</p>
+                    <p class="closebutton" style="cursor: pointer" id="funfactsclose">Close</p>
+                </div>
+                <div class="windowimage">
+                    <img src="./images/bunpile.jpg">
+                </div>
+                <h1>Fun Facts About Olivia!</h1>
+                <button id="generatefunfact">Generate a Fun Fact</button>
+                <div class="factcontainer"><p id="displayfunfact">Click the button above to display a random fun fact!</p></div>
             </div>
         </div>
     </body>

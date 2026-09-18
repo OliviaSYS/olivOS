@@ -4,6 +4,8 @@ setInterval(function () {
 
 let selectedIcon = undefined;
 let biggestIndex = 1;
+const topBar = document.querySelector("#top");
+
 
 function closeWindow(element) {
     element.style.display = "none";
@@ -89,25 +91,26 @@ function openWindow(element) {
     biggestIndex++;
     element.style.zIndex = biggestIndex;
     topBar.style.zIndex = biggestIndex+1;
+    if (element.id=="funfacts") {
+        generatefunfact.click();
+    }
 }
-
-const topBar = document.querySelector("#top");
 
 initializeWindow("aboutme");
 initializeWindow("welcome");
-// var aboutmeScreen = document.querySelector("#aboutme");
-// var aboutmeScreenClose = document.querySelector("#aboutmeclose")
-// aboutmeScreenClose.addEventListener("click", () => closeWindow(aboutmeScreen));
+initializeWindow("funfacts");
 
-// var welcomeScreen = document.querySelector("#welcome");
-// var welcomeScreenClose = document.querySelector("#welcomeclose")
-// var welcomeScreenOpen = document.querySelector("#welcomeopen")
-// welcomeScreenClose.addEventListener("click", function() {
-//     closeWindow(welcomeScreen);
-// });
+const facts = [
+    "Bunnies are my favourite animal - as you can tell:)",
+    "I combined my passions for competitive programming and creative coding in <em><a href=\"oliviasys.github.io/Olivia-s-Coding-Catalog\">Olivia's Coding Catalog</a></em>",
+    "I participated in quite a few Hack Club programs, including HackPad, JumpStart, SoM, and more - check out all my projects @ <strong><a href=\"github.com/OliviaSYS\">my github</a></strong>!",
+    "My team won <em>Best Women's Hack</em> at Ignition Hacks v.6!"
+];
 
-// welcomeScreenOpen.addEventListener("click", function() {
-//     openWindow(welcomeScreen);
-// });
-// addWindowTapHandling(welcomeScreen);
-// addWindowTapHandling(aboutmeScreen);
+const displayfunfact = document.querySelector("#displayfunfact");
+const generatefunfact = document.querySelector("#generatefunfact");
+
+generatefunfact.addEventListener("click", () => {
+    const randomIndex = Math.floor(Math.random() * 4);
+    displayfunfact.innerHTML = facts[randomIndex];
+})
