@@ -4,7 +4,7 @@
 
 A bunny-themed web operating system which illustrates Olivia's passions and interests, while providing an outlook to her life!
 
-## 🖥Try it out!
+## 🖥 Try it out!
 
 👉 **[https://oliviasys.github.io/olivOS/](https://oliviasys.github.io/olivOS/)**
 
